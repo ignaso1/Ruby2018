@@ -82,6 +82,8 @@
 1. Gali pašalinti resursą iš projekto;  **(!)**
 1. Gali pašalinti projektą; **(!)**
 1. Gali pašalinti resursą;  **(!)**
+1. Sukurti Atostogų/Ligos įrašą;
+1. Ištrinti Atostogų/Ligos įrašą;
 
 ##### Resursas (žmogus, dirbantis kompanijoje):
 1. Turi vardą ir pavardę; 
@@ -91,6 +93,7 @@
 1. Turi užmokestį; **(!)**
 1. Gali turėti komentarų;
 1. Turi gimimo metus;
+1. Gali turėti atostogų/ligos įrašą;
 
 ##### Projektas:
 1. Turi pavadinimą; 
@@ -107,8 +110,19 @@
 1. Turi teksto eilutę; **(!)**
 1. Gali priklausyti projektui arba resursui.
 
+##### Atostogų/Ligos įrašas:
+1. Turi unikalų ID;
+1. Turi resursą, kuriam priklauso;
+1. Turi pradžios ir pabaigos datas;
+
 ##### Rolė:
 ##### Potencialus Resursas:
+1. Turi vardą ir pavardę;
+1. Turi unikalų ID;
+1. Turi gyvenimo aprašymą;
+1. Turi potencialių pareigų tipą;
+1. Turi potencialų užmokestį;
+1. Gali turėti komentarų;
 ##### Talentų medžiotojas:
 ##### Finansininkas:
 **Svarbiausios savybės pažymėtos "(!)".**
