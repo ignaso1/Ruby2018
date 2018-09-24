@@ -17,9 +17,12 @@
     - Pavardę;
     - Slaptažodį;
 1. Vartotojas turi skirtingas roles: **(!)** 
-    - Administratorius
-    - Projekto vadovas
-    - Žmogiškųjų išteklių administratorius
+    - Administratorius;
+    - Projekto vadovas;
+    - Žmogiškųjų išteklių administratorius;
+    - Potencialus Resursas;
+    - Talentų medžiotojas;
+    - Finansininkas;
 
 ##### Administratorius:
 1. Gali matyti vartotojų sąrašą; **(!)**
@@ -62,13 +65,13 @@
 1. Gali matyti projekto informaciją;  **(!)**
 1. Gali sukurti projektą;  **(!)**
 1. Gali sukurti resursą;  **(!)**
-1. Gali keisti resurso informaciją:
+1. Gali keisti resurso informaciją: **(!)**
     - Vardą;
     - Pavardę;
     - Gimimo metus;
     - Algos dydį (EUR/h);
     - Pareigų tipą;
-1. Gali keisti projekto informaciją:
+1. Gali keisti projekto informaciją: **(!)**
     - Pavadinimą;
     - Reikiamų žmonių kiekį;
     - Projekto gyvavimo laiką (nuo kada iki kada);
@@ -81,29 +84,31 @@
 1. Gali pašalinti resursą;  **(!)**
 
 ##### Resursas (žmogus, dirbantis kompanijoje):
-1. Turi vardą ir pavardę;
-1. Turi unikalų ID;
+1. Turi vardą ir pavardę; 
+1. Turi unikalų ID; **(!)**
 1. Gali priklausyti projektui;
-1. Turi pareigų tipą;
-1. Turi užmokestį;
+1. Turi pareigų tipą; **(!)**
+1. Turi užmokestį; **(!)**
 1. Gali turėti komentarų;
 1. Turi gimimo metus;
 
 ##### Projektas:
-1. Turi pavadinimą;
-1. Turi unikalų ID;
+1. Turi pavadinimą; 
+1. Turi unikalų ID; **(!)**
 1. Gali turėti resursų;
-1. Turi reikiamo kiekio žmonių skaičių;
-1. Turi pradžios ir pabaigos datas;
+1. Turi reikiamo kiekio žmonių skaičių; **(!)**
+1. Turi pradžios ir pabaigos datas; **(!)**
 1. Gali turėti komentarų;
 
 ##### Komentaras:
-1. Turi unikalų ID;
-1. Turi autorių;
-1. Turi sukūrimo datą;
-1. Turi teksto eilutę; 
+1. Turi unikalų ID; **(!)**
+1. Turi autorių; **(!)**
+1. Turi sukūrimo datą; **(!)**
+1. Turi teksto eilutę; **(!)**
 1. Gali priklausyti projektui arba resursui.
 
 ##### Rolė:
-
+##### Potencialus Resursas:
+##### Talentų medžiotojas:
+##### Finansininkas:
 **Svarbiausios savybės pažymėtos "(!)".**
