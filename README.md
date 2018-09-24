@@ -124,5 +124,11 @@
 1. Turi potencialų užmokestį;
 1. Gali turėti komentarų;
 ##### Talentų medžiotojas:
+1. Sukurti potencialių resursą;
+1. Keisti potencialaus resurso informaciją;
+1. Pridėti komentarą prie potencialaus resurso;
+1. Šalinti komentarą;
+1. Pašalinti potencialų resursą;
+1. Pakeisti potencialų resursą į "normalų" resursą;
 ##### Finansininkas:
 **Svarbiausios savybės pažymėtos "(!)".**
