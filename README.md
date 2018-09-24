@@ -6,15 +6,16 @@
 
 ##### Vartotojas:
 1. Gali registruotis prie sistemos: **(!)**
-   - vartotojai turi vardą ir pavardę;
-   - vartotojai turi el. paštą, į kurį yra siunčiama informacija;
-   - turi unikalų paskyros ID, slaptažodį;
+1. Vartotojai turi vardą ir pavardę;
+1. Vartotojai turi el. paštą, į kurį yra siunčiama informacija;
+1. Turi unikalų paskyros ID;**(!)**
+1. Turi slaptažodį;**(!)**
 1. Gali prisijungti prie sistemos; **(!)**
 1. Gali atsijungti nuo sistemos; **(!)**
 1. Gali koreguoti savo duomenis: 
-    - vardą;
-    - pavardę;
-    - slaptažodį;
+    - Vardą;
+    - Pavardę;
+    - Slaptažodį;
 1. Vartotojas turi skirtingas roles: **(!)** 
     - Administratorius
     - Projekto vadovas
@@ -22,7 +23,7 @@
 
 ##### Administratorius:
 1. Gali matyti vartotojų sąrašą; **(!)**
-1. Gali pašalinti vartotojo paskyrą; **(!)** 
+1. Gali pašalinti vartotojo paskyrą; **(!)**
 1. Gali pakeisti vartotojo slaptažodį;
 1. Gali matyti vartotojo paskyros duomenis;
 1. Gali matyti vartotojo rolę;
@@ -73,14 +74,36 @@
     - Projekto gyvavimo laiką (nuo kada iki kada);
 1. Gali pridėti komentarą prie resurso;
 1. Gali pridėti komentarą prie projekto;
+1. Gali šalinti komentarą;
 1. Gali pridėti resursą į projektą;  **(!)**
 1. Gali pašalinti resursą iš projekto;  **(!)**
 1. Gali pašalinti projektą; **(!)**
 1. Gali pašalinti resursą;  **(!)**
 
-##### Resursas:
+##### Resursas (žmogus, dirbantis kompanijoje):
+1. Turi vardą ir pavardę;
+1. Turi unikalų ID;
+1. Gali priklausyti projektui;
+1. Turi pareigų tipą;
+1. Turi užmokestį;
+1. Gali turėti komentarų;
+1. Turi gimimo metus;
+
 ##### Projektas:
+1. Turi pavadinimą;
+1. Turi unikalų ID;
+1. Gali turėti resursų;
+1. Turi reikiamo kiekio žmonių skaičių;
+1. Turi pradžios ir pabaigos datas;
+1. Gali turėti komentarų;
+
 ##### Komentaras:
+1. Turi unikalų ID;
+1. Turi autorių;
+1. Turi sukūrimo datą;
+1. Turi teksto eilutę; 
+1. Gali priklausyti projektui arba resursui.
+
 ##### Rolė:
 
 **Svarbiausios savybės pažymėtos "(!)".**
