@@ -235,4 +235,11 @@
 1. Gali matyti kitų pašnekovų vardus, pavardes ir roles;
 1. Gali į pokalbį ikelti dokumentą;
 
+
+#### Žinutė:
+1. Turi autorių;
+1. Turi teksto eilutę;
+1. Turi sukurimo datą;
+1. Gali turėti prisegtą dokumentą;
+
 **Svarbiausios savybės pažymėtos "(!)".**
