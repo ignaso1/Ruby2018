@@ -118,7 +118,6 @@
 1. Turi resursą, kuriam priklauso;
 1. Turi pradžios ir pabaigos datas;
 
-##### Rolė:
 ##### Potencialus Resursas:
 1. Turi vardą ir pavardę;
 1. Turi unikalų ID; **(!)**
@@ -126,6 +125,7 @@
 1. Turi potencialių pareigų tipą; **(!)**
 1. Turi potencialų užmokestį;
 1. Gali turėti komentarų;
+
 ##### Talentų medžiotojas:
 1. Sukurti potencialių resursą; **(!)**
 1. Keisti potencialaus resurso informaciją;
@@ -133,14 +133,13 @@
 1. Šalinti komentarą;
 1. Pašalinti potencialų resursą; **(!)**
 1. Pakeisti potencialų resursą į "normalų" resursą;
+
 ##### Finansininkas:
 1. Gali matyti resursus ir potencialius resursus; **(!)**
 1. **Negali** matyti projektų; **(!)**
 1. Gali redaguoti resurso informaciją:
     - Algos dydį;
 1. Gali rašyti komentarą;
-
-
 
 ##### Konsultavimas:
 1. Turi klausimą;
@@ -208,39 +207,38 @@
 1. Gali atsakyti į straipsnių klausimus;
 
 #### Įmonė:
-1. Turi kodą;
-1. Turi pavadinimą;
+1. Turi kodą;  **(!)**
+1. Turi pavadinimą;  **(!)**
 1. Turi vadovą;
 1. Turi resursus;
 1. Gali turėti skolų;
 1. Gali bankrutoti;
 
 #### Vadovas:
-1. Turi vardą ir pavardę;
-1. Turi asmens kodą;
+1. Turi vardą ir pavardę;  **(!)**
 1. Turi algą;
 1. Gali valdyti resursus;
 1. Gali tvirtinti prašymus;
 
 #### Grupinis pokalbis:
-1. Turi pavadinimą;
-1. Turi autorių;
-1. Turi pašnekovus;
-1. Turi žinutes;
+1. Turi pavadinimą;  **(!)**
+1. Turi autorių;  **(!)**
+1. Turi pašnekovus;  **(!)**
+1. Turi žinutes;  **(!)**
 1. Gali turėti įkeltus dokumentus;
 
 #### Pašnekovas:
-1. Gali sukurti žinutę;
-1. Gali skaityti visas pokalbyje esančias žinutes;
+1. Gali sukurti žinutę;  **(!)**
+1. Gali skaityti visas pokalbyje esančias žinutes;  **(!)**
 1. Gali cituoti kitų pašnekovų parašytas žinutes;
-1. Gali matyti kitų pašnekovų vardus, pavardes ir roles;
+1. Gali matyti kitų pašnekovų vardus, pavardes ir roles;  **(!)**
 1. Gali į pokalbį ikelti dokumentą;
 
 
 #### Žinutė:
-1. Turi autorių;
-1. Turi teksto eilutę;
-1. Turi sukūrimo datą;
+1. Turi autorių;  **(!)**
+1. Turi teksto eilutę;  **(!)**
+1. Turi sukūrimo datą;  **(!)**
 1. Gali turėti prisegtą dokumentą;
 
 **Svarbiausios savybės pažymėtos "(!)".**
