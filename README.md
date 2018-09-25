@@ -32,6 +32,7 @@
 1. Gali matyti vartotojo rolę;
 1. Gali pakeisti vartotojo rolę; **(!)** 
 1. Gali matyti resursų sąrašą;
+1. Gali matyti potencialių resursų sąrašą;
 1. Gali matyti projektų sąrašą;
 1. Gali matyti vartotojo sukurtų resursų sąrašą;
 1. **Negali** matyti resurso informacijos; **(!)**
@@ -102,6 +103,7 @@
 1. Turi reikiamo kiekio žmonių skaičių; **(!)**
 1. Turi pradžios ir pabaigos datas; **(!)**
 1. Gali turėti komentarų;
+1. **Negali** turėti potencialių resursų **(!)**
 
 ##### Komentaras:
 1. Turi unikalų ID; **(!)**
@@ -118,17 +120,23 @@
 ##### Rolė:
 ##### Potencialus Resursas:
 1. Turi vardą ir pavardę;
-1. Turi unikalų ID;
+1. Turi unikalų ID; **(!)**
 1. Turi gyvenimo aprašymą;
-1. Turi potencialių pareigų tipą;
+1. Turi potencialių pareigų tipą; **(!)**
 1. Turi potencialų užmokestį;
 1. Gali turėti komentarų;
 ##### Talentų medžiotojas:
-1. Sukurti potencialių resursą;
+1. Sukurti potencialių resursą; **(!)**
 1. Keisti potencialaus resurso informaciją;
 1. Pridėti komentarą prie potencialaus resurso;
 1. Šalinti komentarą;
-1. Pašalinti potencialų resursą;
+1. Pašalinti potencialų resursą; **(!)**
 1. Pakeisti potencialų resursą į "normalų" resursą;
 ##### Finansininkas:
+1. Gali matyti resursus ir potencialius resursus; **(!)**
+1. **Negali** matyti projektų; **(!)**
+1. Gali redaguoti resurso informaciją:
+    - Algos dydį;
+1. Gali rašyti komentarą;
+
 **Svarbiausios savybės pažymėtos "(!)".**
