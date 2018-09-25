@@ -221,4 +221,18 @@
 1. Gali valdyti resursus;
 1. Gali tvirtinti prašymus;
 
+#### Grupinis pokalbis:
+1. Turi pavadinimą;
+1. Turi autorių;
+1. Turi pašnekovus;
+1. Turi žinutes;
+1. Gali turėti įkeltus dokumentus;
+
+#### Pašnekovas:
+1. Gali sukurti žinutę;
+1. Gali skaityti visas pokalbyje esančias žinutes;
+1. Gali cituoti kitų pašnekovų parašytas žinutes;
+1. Gali matyti kitų pašnekovų vardus, pavardes ir roles;
+1. Gali į pokalbį ikelti dokumentą;
+
 **Svarbiausios savybės pažymėtos "(!)".**
