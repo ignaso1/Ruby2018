@@ -24,6 +24,10 @@
     - Potencialus Resursas;
     - Talentų medžiotojas;
     - Finansininkas;
+    - Konsultantas;
+    - Straipsnių rašytojas;
+    - Vadovas;
+    - Tyrėjas;
 
 ##### Administratorius:
 1. Gali matyti vartotojų sąrašą; **(!)**
@@ -182,31 +186,22 @@
 1. Gali turėti komentarų;
 
 ##### Konsultantas:
-1. Turi vardą ir pavardę;
-1. Turi unikalų ID; **(!)**
-1. Turi gyvenimo aprašymą;
 1. Gali matyti klausimus;
 1. Gali atsakyti į klausimus;
 1. Turi užmokestį; **(!)**
 1. Turi atsiliepimus iš vartotojų; **(!)**
 
-#### Tyrėjas:
-1. Turi vardą ir pavardę;
-1. Turi unikalų ID; **(!)**
-1. Turi gyvenimo aprašymą;
+##### Tyrėjas:
 1. Turi užmokestį; **(!)**
 1. Turi vertinimą iš vartotojų; **(!)**
 1. Gali atsakyti į tyrimo klausimus;
 
-#### Straipsnių rašytojas:
-1. Turi vardą ir pavardę;
-1. Turi unikalų ID; **(!)**
-1. Turi gyvenimo aprašymą;
+##### Straipsnių rašytojas:
 1. Turi užmokestį; **(!)**
 1. Turi vertinimą iš vartotojų; **(!)**
 1. Gali atsakyti į straipsnių klausimus;
 
-#### Įmonė:
+##### Įmonė:
 1. Turi kodą;  **(!)**
 1. Turi pavadinimą;  **(!)**
 1. Turi vadovą;
@@ -214,20 +209,20 @@
 1. Gali turėti skolų;
 1. Gali bankrutoti;
 
-#### Vadovas:
-1. Turi vardą ir pavardę;  **(!)**
+##### Vadovas:
 1. Turi algą;
-1. Gali valdyti resursus;
+1. Gali matyti resursus;
+1. Gali matyti projektus;
 1. Gali tvirtinti prašymus;
 
-#### Grupinis pokalbis:
+##### Grupinis pokalbis:
 1. Turi pavadinimą;  **(!)**
 1. Turi autorių;  **(!)**
 1. Turi pašnekovus;  **(!)**
 1. Turi žinutes;  **(!)**
 1. Gali turėti įkeltus dokumentus;
 
-#### Pašnekovas:
+##### Pašnekovas:
 1. Gali sukurti žinutę;  **(!)**
 1. Gali skaityti visas pokalbyje esančias žinutes;  **(!)**
 1. Gali cituoti kitų pašnekovų parašytas žinutes;
@@ -235,7 +230,7 @@
 1. Gali į pokalbį ikelti dokumentą;
 
 
-#### Žinutė:
+##### Žinutė:
 1. Turi autorių;  **(!)**
 1. Turi teksto eilutę;  **(!)**
 1. Turi sukūrimo datą;  **(!)**
