@@ -12,6 +12,7 @@
 1. Turi slaptažodį;**(!)**
 1. Gali prisijungti prie sistemos; **(!)**
 1. Gali atsijungti nuo sistemos; **(!)**
+1. Gali sukurti grupinį pokalbį;
 1. Gali koreguoti savo duomenis: 
     - Vardą;
     - Pavardę;
@@ -239,7 +240,7 @@
 #### Žinutė:
 1. Turi autorių;
 1. Turi teksto eilutę;
-1. Turi sukurimo datą;
+1. Turi sukūrimo datą;
 1. Gali turėti prisegtą dokumentą;
 
 **Svarbiausios savybės pažymėtos "(!)".**
