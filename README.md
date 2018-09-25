@@ -139,4 +139,71 @@
     - Algos dydį;
 1. Gali rašyti komentarą;
 
+
+
+##### Konsultavimas:
+1. Turi klausimą;
+1. Turi konsultantą;
+1. Turi vertinimą;
+
+##### Tyrimas:
+1. Turi unikalų ID; **(!)**
+1. Turi įrašo datą; **(!)**
+1. Turi tyrimo autorių; **(!)**
+1. Turi teksto eilutę; **(!)**
+1. Gali turėti komentarų;
+
+##### Straipnsnis:
+1. Turi unikalų ID; **(!)**
+1. Turi įrašo datą; **(!)**
+1. Turi straipsnio autorių; **(!)**
+1. Turi teksto eilutę; **(!)**
+1. Gali turėti komentarų;
+
+##### Klausimas:
+1. Turi unikalų ID; **(!)**
+1. Turi įrašo datą; **(!)**
+1. Turi klausimo autorių; **(!)**
+1. Turi teksto eilutę; **(!)**
+1. Gali turėti komentarų;
+
+##### Vertinimas:
+1. Turi unikalų ID; **(!)**
+1. Turi įrašo datą; **(!)**
+1. Turi vertinimo autorių; **(!)**
+1. Turi vertinimą; **(!)**
+
+##### Atsiliepimas:
+1. Turi unikalų ID; **(!)**
+1. Turi įrašo datą; **(!)**
+1. Turi atsiliepimo autorių; **(!)**
+1. Turi teksto eilutę; **(!)**
+1. Turi vertinimą;
+1. Gali turėti komentarų;
+
+##### Konsultantas:
+1. Turi vardą ir pavardę;
+1. Turi unikalų ID; **(!)**
+1. Turi gyvenimo aprašymą;
+1. Gali matyti klausimus;
+1. Gali atsakyti į klausimus;
+1. Turi užmokestį; **(!)**
+1. Turi atsiliepimus iš vartotojų; **(!)**
+
+#### Tyrėjas:
+1. Turi vardą ir pavardę;
+1. Turi unikalų ID; **(!)**
+1. Turi gyvenimo aprašymą;
+1. Turi užmokestį; **(!)**
+1. Turi vertinimą iš vartotojų; **(!)**
+1. Gali atsakyti į tyrimo klausimus;
+
+#### Straipsnių rašytojas:
+1. Turi vardą ir pavardę;
+1. Turi unikalų ID; **(!)**
+1. Turi gyvenimo aprašymą;
+1. Turi užmokestį; **(!)**
+1. Turi vertinimą iš vartotojų; **(!)**
+1. Gali atsakyti į straipsnių klausimus;
+
 **Svarbiausios savybės pažymėtos "(!)".**
