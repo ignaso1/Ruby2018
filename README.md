@@ -206,4 +206,19 @@
 1. Turi vertinimą iš vartotojų; **(!)**
 1. Gali atsakyti į straipsnių klausimus;
 
+#### Įmonė:
+1. Turi kodą;
+1. Turi pavadinimą;
+1. Turi vadovą;
+1. Turi resursus;
+1. Gali turėti skolų;
+1. Gali bankrutoti;
+
+#### Vadovas:
+1. Turi vardą ir pavardę;
+1. Turi asmens kodą;
+1. Turi algą;
+1. Gali valdyti resursus;
+1. Gali tvirtinti prašymus;
+
 **Svarbiausios savybės pažymėtos "(!)".**
