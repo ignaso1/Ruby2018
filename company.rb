@@ -2,7 +2,7 @@ class Company
   def initialize(role_type = 'base')
     @information = { company_id: nil,
                      is_running: false,
-					 debt: "0",
+					 debt: 0,
 					 resources_count: "0",
 					 ceo_name: nil,
 					 ceo_id: nil,
@@ -45,8 +45,12 @@ class Company
     @information.fetch(symbol.to_sym)
   end
   
+  def addDebt(debt)
+    @information[:debt] = debt
+  end
+  
   def bankrupt?
-	return true unless @information.fetch(:debt) < 0
-    false
+	return false unless @information.fetch(:debt) < 0
+    true
   end
 end

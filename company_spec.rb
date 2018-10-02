@@ -28,8 +28,13 @@ describe Company do
     end
 	
 	it 'can hire' do
-      expect { @company.placeCEO('steve jobs') }
+      expect { @company.placeCEO('f-1', 'steve jobs') }
         .to change { @company.hasCEO? }.from(false).to(true)
+    end
+	
+	it 'can fire' do
+      expect { @company.fireCEO() }
+        .to change { @company.hasCEO? }.from(true).to(false)
     end
   end
 
@@ -67,7 +72,12 @@ describe Company do
     end
 
     it 'can see their debt' do
-      expect(@company.information('debt')).to eql('0')
+      expect(@company.information('debt')).to eql(0)
+    end
+	
+	it 'can bankrupt' do
+      expect { @company.addDebt(-10) }
+        .to change { @company.bankrupt? }.from(false).to(true)
     end
 
     it 'can unregister' do
