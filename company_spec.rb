@@ -23,17 +23,11 @@ describe Company do
   
   context 'ceo' do
 	before do
-      @company = Company.new
-      @company.register('id-1', 'google')
       @company = Company.new('uab')
+      @company.register('id-1', 'google')
     end
 	
 	it 'can hire' do
-      expect { @company.placeCEO('steve jobs') }
-        .to change { @company.hasCEO? }.from(false).to(true)
-    end
-	
-	it 'can fire' do
       expect { @company.placeCEO('steve jobs') }
         .to change { @company.hasCEO? }.from(false).to(true)
     end
@@ -41,9 +35,10 @@ describe Company do
 
   context 'when registering' do
     before do
-      @company = Company.new
-      @company.register('id-1', 'google')
       @company = Company.new('uab')
+      @company.register('id-1', 'google')
+      @company_other = Company.new('uab')
+      @company.register('id-2', 'google')
     end
 
     it 'gets a company id upon registration' do
@@ -68,7 +63,7 @@ describe Company do
     end
 
     it 'can see their id' do
-      expect(@company.information('company_id')).to eql('id-1')
+      expect(@company.information('company_id')).to eql('id-2')
     end
 
     it 'can see their debt' do
@@ -76,7 +71,7 @@ describe Company do
     end
 
     it 'can unregister' do
-      expect { @company.fireCEO }.to change { @company.information('has_ceo') }
+      expect { @company.unregister() }.to change { @company.information('is_running') }
         .from(true).to(false)
     end
   end

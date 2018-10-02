@@ -2,8 +2,8 @@ class Company
   def initialize(role_type = 'base')
     @information = { company_id: nil,
                      is_running: false,
-					 debt: 0,
-					 resources_count: 0,
+					 debt: "0",
+					 resources_count: "0",
 					 ceo_name: nil,
 					 ceo_id: nil,
 					 has_ceo: false
@@ -33,10 +33,11 @@ class Company
   def placeCEO(ceo_id, ceo_name = nil)
     @information[:ceo_id] = ceo_id
     @information[:ceo_name] = ceo_name
+	@information[:has_ceo] = true
   end
   
   def hasCEO?
-	return true unless @information.fetch(:has_ceo).equal?(true)
+	return true unless @information.fetch(:has_ceo).equal?(false)
     false
   end
   
