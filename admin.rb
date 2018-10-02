@@ -1,43 +1,59 @@
 # Admin class used as a base for other classes
 class Admin
-  def get_user_list(user_list)
-    user_list.fetch
+  def initialize
+    @information = { 
+      user_list: [ 
+        user: {
+          user_id: nil,
+          password: nil,
+          role_type: nil
+        }
+      ],
+      project_list: [],
+      comment_list: [],
+      resource_list: [] 
+    }
   end
 
-  def get_project_list(project_list)
-    project_list.fetch
+  def user_list
+    @information.fetch(:user_list)
   end
 
-  def get_resource_information(resource_list)
-    resource_list.fetch
+  def project_list
+    @information.fetch(:project_list)
+  end
+
+  def resource_list
+    @information.fetch(:resource_list)
+  end
+
+  def change_user_password
+    @information.fetch(:user_list) = "new_password"
   end
 
   def get_project_information(project_list)
-    project_list.fetch
-  end
-
-  def change_user_password(new_password)
-    project_list.password_value = new_password
+    @information.fetch(:project_list)
+    true
   end
 
   def change_user_role(user_list)
-    user_list.role_type = new_role_type
-
+    @information.fetch(:user_list).role_type = new_role_type
+    true
   end
 
   def delete_user_account(user_id, user_list)
-    user_list.delete(user_id)
+    @information.fetch(:user_list).delete(user_id)
   end
 
   def delete_resource(resource_id, resource_list)
-    resource_list.delete(resource_id)
+    @information.fetch(:resource_list).delete(resource_id)
   end
 
   def delete_project(project_id, project_list)
-    project_list.delete(project_id)
+    @information.fetch(:project_list).delete(project_id)
   end
 
   def add_comment(comment, comment_list)
-    comment_list.push(comment)
+    @information.comment_list.push(comment)
   end
 end
