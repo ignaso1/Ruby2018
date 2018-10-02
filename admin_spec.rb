@@ -26,7 +26,7 @@ describe Admin do
     end
 
     it 'can not see project information' do
-        expect(@admin.project_list).to eql(0)
+        expect(@admin.project_list).to eql([])
     end
 
     it 'can change user role' do
@@ -46,7 +46,10 @@ describe Admin do
     end
 
     it 'can not comment' do
-        expect(@admin.add_comment("", "[]")).to be false
-    end
+        expect { @admin.add_comment('abc') }
+        .to change { @admin.information('comments').length }
+        .from(@admin.information('comments').length)
+        .to(@admn.information('comments').length)
+      end
   end
 end

@@ -13,6 +13,34 @@ class Admin
       comment_list: [],
       resource_list: [] 
     }
+    @information[:comment_list] = []
+    # @information[:user_list] = []
+    @information[:project_list] = []
+    @information[:resource_list] = []
+  end
+
+  def change_user_password(password)
+    @information[:user_list].user.password = password
+  end
+
+  def change_user_role(user_list, role_type)
+    @information[:user_list].role_type = role_type
+  end
+
+  def delete_user_account(user_id, user_list)
+    @information[:user_list].delete(user_id)
+  end
+
+  def delete_resource(resource_id, resource_list)
+    @information[:resource_list].delete(resource_id)
+  end
+
+  def delete_project(project_id, project_list)
+    @information[:project_list].delete(project_id)
+  end
+
+  def add_comment(comment)
+    @information[:comments].push comment
   end
 
   def user_list
@@ -27,33 +55,12 @@ class Admin
     @information.fetch(:resource_list)
   end
 
-  def change_user_password
-    @information.fetch(:user_list) = "new_password"
-  end
-
   def get_project_information(project_list)
     @information.fetch(:project_list)
     true
   end
 
-  def change_user_role(user_list)
-    @information.fetch(:user_list).role_type = new_role_type
-    true
-  end
-
-  def delete_user_account(user_id, user_list)
-    @information.fetch(:user_list).delete(user_id)
-  end
-
-  def delete_resource(resource_id, resource_list)
-    @information.fetch(:resource_list).delete(resource_id)
-  end
-
-  def delete_project(project_id, project_list)
-    @information.fetch(:project_list).delete(project_id)
-  end
-
-  def add_comment(comment, comment_list)
-    @information.comment_list.push(comment)
+  def information(symbol)
+    @information.fetch(symbol.to_sym)
   end
 end
