@@ -33,7 +33,8 @@ describe Company do
     end
 	
 	it 'can fire' do
-      expect { @company.fireCEO() }
+    @company.placeCEO('f-1', 'steve jobs')
+    expect { @company.fireCEO() }
         .to change { @company.hasCEO? }.from(true).to(false)
     end
   end
