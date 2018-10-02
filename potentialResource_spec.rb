@@ -20,9 +20,14 @@ describe PotentialResource do
         .to change { @potResource.exists? }.from(false).to(true)
     end
 
+    it 'can enter a name upon creation' do
+      expect { @potResource.create('Tester', 1000, 'Name') }
+        .to change { @potResource.information('full_name') }.from(nil).to('Name')
+    end
+
     it 'must specify a position on creation' do
       expect { @potResource.create('Tester', 1000) }
-        .to change { @potResource.information('position')}.from(nil).to('Tester')
+        .to change { @potResource.information('position') }.from(nil).to('Tester')
     end
   end
 

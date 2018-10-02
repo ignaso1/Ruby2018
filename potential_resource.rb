@@ -2,7 +2,8 @@
 class PotentialResource
   def initialize
     @information = { potResource_id: nil,
-                     position: nil}
+                     position: nil,
+                     full_name: nil }
     @information[:comments] = []
   end
 
@@ -18,7 +19,7 @@ class PotentialResource
   end
 
   def add_comment(comment)
-    @information[:comments].push comment
+    @information.fetch(:comments).push(comment)
   end
 
   def remove_comment(comment)
