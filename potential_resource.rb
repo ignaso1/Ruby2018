@@ -1,7 +1,8 @@
 # Class for Potential Resource
 class PotentialResource
   def initialize
-    @information = { potResource_id: nil }
+    @information = { potResource_id: nil,
+                     position: nil}
     @information[:comments] = []
   end
 
@@ -12,10 +13,8 @@ class PotentialResource
     @information[:salary] = salary
   end
 
-  def edit_info(position, salary, full_name = nil)
-    @information[:full_name] = full_name
-    @information[:position] = position
-    @information[:salary] = salary
+  def edit_info(symbol, value)
+    @information[symbol.to_sym] = value
   end
 
   def add_comment(comment)
@@ -23,7 +22,7 @@ class PotentialResource
   end
 
   def remove_comment(comment)
-    @information[:comments].delete(comment)
+    @information.fetch(:comments).delete(comment)
   end
 
   def exists?

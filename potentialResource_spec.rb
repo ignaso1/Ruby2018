@@ -19,6 +19,11 @@ describe PotentialResource do
       expect { @potResource.create('Tester', 1000) }
         .to change { @potResource.exists? }.from(false).to(true)
     end
+
+    it 'must specify a position on creation' do
+      expect { @potResource.create('Tester', 1000) }
+        .to change { @potResource.information('position')}.from(nil).to('Tester')
+    end
   end
 
   context 'when creating' do
@@ -53,7 +58,7 @@ describe PotentialResource do
     end
 
     it 'information can be edited' do
-	  expect { @potResource.edit_info('Tester', 5000, 'Lukas') }
+	  expect { @potResource.edit_info('salary', 5000) }
 	  .to change { @potResource.information('salary') }
 	  .from(1000).to(5000)
     end
