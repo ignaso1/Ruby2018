@@ -18,11 +18,11 @@ describe Admin do
     end
 
     it 'can change user password' do
-        expect(@admin.changeUserPassword).to be true
+        expect(@admin.change_user_password).to be true
     end
 
     it 'can change user role' do
-        expect(@admin.changeUserRole).to be true
+        expect(@admin.change_user_role).to be true
     end
     
     it 'can delete user account' do
@@ -31,11 +31,11 @@ describe Admin do
       end
     
     it 'can delete resource' do
-        expect(@admin.deleteResource).to be true
+        expect(@admin.delete_resource).to be true
     end
 
     it 'can delete project' do
-        expect(@admin.deleteProject).to be true
+        expect(@admin.delete_project).to be true
     end
 
     it 'can not see resource information' do
@@ -43,7 +43,7 @@ describe Admin do
     end
   
     it 'can not see project information' do
-        expect(@admin.getProjectList.size).to eq > 0
+        expect(@admin.get_project_list.size).to eq > 0
 
     end
   

@@ -1,44 +1,43 @@
 # Admin class used as a base for other classes
 class Admin
-    def getUserList(userList)
-        return userList.fetch()
-    end
+  def get_user_list(user_list)
+    user_list.fetch
+  end
 
-    def getProjectList(projectList)
-        return projectList.fetch()
-    end
+  def get_project_list(project_list)
+    project_list.fetch
+  end
 
-    def getResourceInformation(resourceList)
-        return resourceList.fetch()
-    end
+  def get_resource_information(resource_list)
+    resource_list.fetch
+  end
 
-    def getProjectInformation(projectList)
-        return projectList.fetch()
-    end
+  def get_project_information(project_list)
+    project_list.fetch
+  end
 
-    def changeUserPassword(newPassword, user_id, password_value)
-        projectList.password_value = newPassword;
-    end
+  def change_user_password(new_password)
+    project_list.password_value = new_password
+  end
 
-    def changeUserRole(userList, user_id, role_type)
-        userList.role_type = new_role_type;
+  def change_user_role(user_list)
+    user_list.role_type = new_role_type
 
-    end
+  end
 
-    def deleteUserAccount(user_id, userList)
-        userList.delete(user_id)
-    end
+  def delete_user_account(user_id, user_list)
+    user_list.delete(user_id)
+  end
 
-    def deleteResource(resource_id, resourceList)
-        resourceList.delete(resource_id)
-    end
+  def delete_resource(resource_id, resource_list)
+    resource_list.delete(resource_id)
+  end
 
-    def deleteProject(project_id, projectList)
-        projectList.delete(project_id)
-    end
+  def delete_project(project_id, project_list)
+    project_list.delete(project_id)
+  end
 
-    def addComment(comment, commentList)
-        commentList.push(comment);
-    end
-    
+  def add_comment(comment, comment_list)
+    comment_list.push(comment)
+  end
 end
