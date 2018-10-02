@@ -11,14 +11,22 @@ describe Admin do
     end
 
     it 'can see users list' do
-        expect(userList.size).to eq > 0
+        expect(@admin.user_list.size).to eql(1)
     end
     it 'can see projects list' do
-        expect(projectList.size).to eq > 0
+        expect(@admin.project_list.size).to eql(0)
+    end
+
+    it 'can not see resource information' do
+        expect(@admin.resource_list.size).to eql(0)
     end
 
     it 'can change user password' do
         expect(@admin.change_user_password).to be true
+    end
+
+    it 'can not see project information' do
+        expect(@admin.project_list).to eql([])
     end
 
     it 'can change user role' do
@@ -26,9 +34,8 @@ describe Admin do
     end
     
     it 'can delete user account' do
-        expect(@admin.deleteUser).to be true
-
-      end
+        expect(@admin.delete_user_account).to be true
+    end
     
     it 'can delete resource' do
         expect(@admin.delete_resource).to be true
@@ -38,17 +45,11 @@ describe Admin do
         expect(@admin.delete_project).to be true
     end
 
-    it 'can not see resource information' do
-        expect(@admin.getResourceList.size).to eq > 0
-    end
-  
-    it 'can not see project information' do
-        expect(@admin.get_project_list.size).to eq > 0
-
-    end
-  
     it 'can not comment' do
-        expect(@admin.addComent).to be false
-    end
+        expect { @admin.add_comment('abc') }
+        .to change { @admin.information('comments').length }
+        .from(@admin.information('comments').length)
+        .to(@admn.information('comments').length)
+      end
   end
 end
