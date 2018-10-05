@@ -1,7 +1,7 @@
 # Projects are used to represent temporary collaborative endeavours
 # to achvieve a particular goal
 class Project
-  attr_accessor :resources, :comments, :information
+  attr_reader :resources, :comments, :information
   def initialize(project_name, resource_reqs)
     @information = { project_start: nil,
                      project_finish: nil }
@@ -12,17 +12,12 @@ class Project
     @comments = []
   end
 
-  def define_start(year, month, day)
-    project_start = Date.new(year, month, day)
-    return unless project_start > Date.today
-
-    @information[:project_start] = project_start
+  def define_start(date)
+    @information[:project_start] = date if date > Date.today
   end
 
   def define_finish(length)
-    return unless length > 0
-
-    @information[:project_finish] = @information[:project_start] + length
+    @information[:project_finish] = @information[:project_start] + length if length > 0
   end
 
   def add_resource(resource)

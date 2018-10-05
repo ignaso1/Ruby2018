@@ -2,26 +2,29 @@ require 'spec_helper'
 
 describe Resource do
   context 'when creating' do
-    before do
-      @resource = Resource.new('lorem', 'ipsum')
-      @resource_other = Resource.new('lorem', 'ipsum')
+    let(:resource) do
+      described_class.new('lorem', 'ipsum')
+    end
+
+    let(:resource_other) do
+      described_class.new('lorem', 'ipsum')
     end
 
     it 'gets a resource id upon creation' do
-      expect(@resource.info('resource_id')).to_not be_nil
+      expect(resource.info('resource_id')).not_to be_nil
     end
 
     it 'gets a name upon creation' do
-      expect(@resource.info('name')).to_not be_nil
+      expect(resource.info('name')).not_to be_nil
     end
 
     it 'gets a last name upon creation' do
-      expect(@resource.info('last_name')).to_not be_nil
+      expect(resource.info('last_name')).not_to be_nil
     end
 
     it 'has a unique id' do
-      expect(@resource.info('resource_id'))
-        .to_not eql(@resource_other.info('resource_id'))
+      expect(resource.info('resource_id'))
+        .not_to eql(resource_other.info('resource_id'))
     end
   end
 end

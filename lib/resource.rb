@@ -1,6 +1,6 @@
 # Resource class used to respresent human resources
 class Resource
-  attr_accessor :leave_notices, :comments, :information
+  attr_reader :leave_notices, :comments, :information
   def initialize(name, last_name)
     @information = { position: nil, salary: nil,
                      birthday: nil }

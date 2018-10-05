@@ -9,17 +9,12 @@ class LeaveNotice
     @information[:leave_type] = leave_type
   end
 
-  def define_start(year, month, day)
-    leave_start = Date.new(year, month, day)
-    return unless leave_start > Date.today
-
-    @information[:leave_start] = leave_start
+  def define_start(date)
+    @information[:leave_start] = date if date > Date.today
   end
 
   def define_finish(length)
-    return unless length > 0
-
-    @information[:leave_finish] = @information[:leave_start] + length
+    @information[:leave_finish] = @information[:leave_start] + length if length > 0
   end
 
   def info(symbol)

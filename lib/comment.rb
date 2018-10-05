@@ -3,9 +3,9 @@ require 'date'
 class Comment
   def initialize(author, content)
     @information = { creation_date: Date.today,
-                      comment_id: self,
-                      author: nil,
-                      content: nil }
+                     comment_id: self,
+                     author: nil,
+                     content: nil }
     @information[:comment_id] = self
     @information[:author] = author
     @information[:content] = content

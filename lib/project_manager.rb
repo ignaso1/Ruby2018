@@ -10,8 +10,7 @@ class ProjectManager < User
   def change_project_name(project, new_name)
     return unless project.instance_of?(Project) && @projects.include?(project)
 
-    @projects[project_index(project)]
-      .information[:project_name] = new_name
+    @projects[project_index(project)].information[:project_name] = new_name
   end
 
   def change_project_reqs(project, new_reqs)
@@ -25,16 +24,13 @@ class ProjectManager < User
     return unless project.instance_of?(Project) &&
                   date.instance_of?(Date) && date > Date.today
 
-    @projects[project_index(project)]
-      .information[:project_start] = date
+    @projects[project_index(project)].define_start(date)
   end
 
   def define_project_finish(project, length)
     return unless project.instance_of?(Project) && length > 0
 
-    index = project_index(project)
-    @projects[index].information[:project_finish] =
-      get_project_start(project) + length
+    @projects[project_index(project)].define_finish(length)
   end
 
   def comment_project(project, comment)
@@ -68,10 +64,6 @@ class ProjectManager < User
     @projects[project_index(project)]
       .resources[resource_index(project, resource)]
       .comments.delete(comment)
-  end
-
-  def get_project_start(project)
-    @projects[project_index(project)].information[:project_start]
   end
 
   def resource_index(project, resource)

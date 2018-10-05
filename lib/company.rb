@@ -50,7 +50,7 @@ class Company
   end
   
   def bankrupt?
-	return false unless @information.fetch(:debt) < 0
+	  return false unless @information.fetch(:debt) < 0
     true
   end
 end
