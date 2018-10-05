@@ -1,7 +1,4 @@
-require 'simplecov'
-SimpleCov.start
-
-require './company.rb'
+require 'spec_helper'
 
 describe Company do
   context 'when not registered' do

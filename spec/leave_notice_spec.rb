@@ -1,7 +1,4 @@
-require 'simplecov'
-SimpleCov.start
-
-require './leave_notice.rb'
+require 'spec_helper'
 
 describe LeaveNotice do
   context 'when defining its length' do

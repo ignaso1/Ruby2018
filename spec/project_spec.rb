@@ -1,9 +1,4 @@
-require 'simplecov'
-SimpleCov.start
-
-require './project.rb'
-require './comment.rb'
-require './resource.rb'
+require 'spec_helper'
 
 describe Project do
   context 'when creating' do

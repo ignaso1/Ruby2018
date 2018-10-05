@@ -1,7 +1,4 @@
-require 'simplecov'
-SimpleCov.start
-
-require './potential_resource.rb'
+require 'spec_helper'
 
 describe PotentialResource do
   context 'when not created' do

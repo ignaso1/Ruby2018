@@ -1,7 +1,4 @@
-require 'simplecov'
-SimpleCov.start
-
-require './admin.rb'
+require 'spec_helper'
 
 describe Admin do
   

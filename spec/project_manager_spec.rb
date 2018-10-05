@@ -1,7 +1,4 @@
-require 'simplecov'
-SimpleCov.start
-
-require './project_manager.rb'
+require 'spec_helper'
 
 describe ProjectManager do
   context 'when managing projects' do

@@ -1,7 +1,4 @@
-require 'simplecov'
-SimpleCov.start
-
-require './resource.rb'
+require 'spec_helper'
 
 describe Resource do
   context 'when creating' do
