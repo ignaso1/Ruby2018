@@ -1,14 +1,14 @@
 # Class for Potential Resource
 class PotentialResource
   def initialize
-    @information = { potResource_id: nil,
+    @information = { id: nil,
                      position: nil,
                      full_name: nil }
     @information[:comments] = []
   end
 
   def create(position, salary, full_name = nil)
-    @information[:potResource_id] = self
+    @information[:id] = self
     @information[:full_name] = full_name
     @information[:position] = position
     @information[:salary] = salary
@@ -27,7 +27,7 @@ class PotentialResource
   end
 
   def exists?
-    return true unless @information.fetch(:potResource_id).equal?(nil)
+    return true unless @information.fetch(:id).equal?(nil)
 
     false
   end

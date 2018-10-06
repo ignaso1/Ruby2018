@@ -17,7 +17,7 @@ class Project
   end
 
   def define_finish(length)
-    @information[:project_finish] = @information[:project_start] + length if length > 0
+    @information[:project_finish] = info('project_start') + length if length > 0
   end
 
   def add_resource(resource)

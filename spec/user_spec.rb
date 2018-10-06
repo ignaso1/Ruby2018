@@ -31,11 +31,11 @@ describe User do
     end
 
     it 'gets a user id upon registration' do
-      expect(user.information('user_id')).to_not be_nil
+      expect(user.information('user_id')).not_to be_nil
     end
 
     it 'has a unique user id' do
-      expect(user.information('user_id')).to_not eql(user_other
+      expect(user.information('user_id')).not_to eql(user_other
                                                         .information('user_id'))
     end
 
