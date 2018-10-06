@@ -1,59 +1,68 @@
 # Admin class used as a base for other classes
-class Admin
+# Admin class used as a base for other classes
+require './lib/user.rb'
+
+class Admin < User
+  attr_reader :projects, :resources, :users
+
   def initialize
-    @information = { user_list: [user: { user_id: nil,
-                                         password: nil,
-                                         role_type: nil }],
-                     project_list: [],
-                     comment_list: [],
-                     resource_list: [] }
-    @information[:comment_list] = []
-    @information[:project_list] = []
-    @information[:resource_list] = []
+    @projects = [], @resources = [], @users = []
   end
 
-  def change_user_password(password)
-    @information[:user_list].user.password = password
+  def remove_user(user)
+    @users.delete(user) if @users.include?(user)
   end
 
-  def change_user_role(role_type)
-    @information[:user_list][:role_type] = role_type
+  def can_not_see_resource_information(user)
+    if @users[user_index(user)]
+      .information[:role_type] === 'admin'
+      return 0;
+    else return 1;
+    end
   end
 
-  def delete_user_account(user_id)
-    @information[:user_list].delete(user_id)
+  def can_not_see_project_information(user) 
+    if @users[user_index(user)]
+      .information[:role_type] === 'admin'
+      return 0;
+    else return 1;
+    end
   end
 
-  def delete_resource(resource_id)
-    @information[:resource_list].delete(resource_id)
+  def change_user_password(user, new_password)
+    return unless user.instance_of?(User) && @users.include?(user)
+
+    @users[user_index(user)]
+      .information[:password] = new_password
   end
 
-  def delete_project(project_id)
-    @information[:project_list].delete(project_id)
+  def change_user_role_type(user, new_role_type)
+    return unless user.instance_of?(User) && @users.include?(user)
+
+    @users[user_index(user)]
+      .information[:role_type] = new_role_type
   end
 
-  def add_comment(comment)
-    @information[:comments].push comment
+  def delete_resource(project, resource)
+    return project.remove_resource(resource)
   end
 
-  def user_list
-    @information.fetch(:user_list)
+  def remove_project(project)
+    return @projects.delete(project) if projects.include?(project)
   end
 
-  def project_list
-    @information.fetch(:project_list)
+  def comment_project(project, comment, user)
+    return unless comment.instance_of?(Comment)
+    if @users[user_index(user)]
+      .information[:role_type] === 'admin'
+      return 0;
+    else 
+    @projects[project_index(project)]
+      .comments << comment
+    end
   end
 
-  def resource_list
-    @information.fetch(:resource_list)
-  end
-
-  def project_information
-    @information.fetch(:project_list)
-    true
-  end
-
-  def information(symbol)
-    @information.fetch(symbol.to_sym)
+  def user_index(user)
+    return @users.index(user) if @users.include?(user)
   end
 end
