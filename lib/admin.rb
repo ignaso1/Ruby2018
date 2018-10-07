@@ -22,8 +22,9 @@ class Admin < User
   end
 
   def change_user_password(user, new_password)
-    @users[user_index(user)].information('password') << new_password
-    unless user.instance_of?(User) && @users.include?(user)
+    return false unless user.instance_of?(User) && @users.include?(user)
+
+    @users[user_index(user)].information[:password] = new_password
 
   end
 
