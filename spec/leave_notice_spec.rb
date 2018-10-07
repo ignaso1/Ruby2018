@@ -24,28 +24,28 @@ describe LeaveNotice do
     end
 
     it 'can have a start date' do
-      expect(leave_notice.info('leave_start'))
+      expect(leave_notice.info('start'))
         .not_to be_nil
     end
 
     it 'can have an end date' do
-      expect(leave_notice.info('leave_finish'))
+      expect(leave_notice.info('finish'))
         .not_to be_nil
     end
 
     it 'has to start in the future' do
-      expect(leave_notice.info('leave_start'))
+      expect(leave_notice.info('start'))
         .to be > Date.today
     end
 
     it 'has to start before it ends' do
-      expect(leave_notice.info('leave_start'))
-        .to be < leave_notice.info('leave_finish')
+      expect(leave_notice.info('start'))
+        .to be < leave_notice.info('finish')
     end
 
     it 'does not have a start date with incorrect parameters' do
       leave_notice_other.define_start(date_invalid)
-      expect(leave_notice_other.info('leave_start')).to be_nil
+      expect(leave_notice_other.info('start')).to be_nil
     end
   end
 end

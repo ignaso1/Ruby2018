@@ -10,7 +10,7 @@ class ProjectManager < User
   def change_project_name(project, new_name)
     return unless project.instance_of?(Project) && @projects.include?(project)
 
-    @projects[project_index(project)].information[:project_name] = new_name
+    @projects[project_index(project)].information[:name] = new_name
   end
 
   def change_project_reqs(project, new_reqs)

@@ -11,12 +11,12 @@ describe Project do
     end
 
     it 'has a project id upon creation' do
-      expect(project.info('project_id')).not_to be_nil
+      expect(project.info('id')).not_to be_nil
     end
 
     it 'has a unique project id' do
-      expect(project.info('project_id'))
-        .not_to eql(project_other.info('project_id'))
+      expect(project.info('id'))
+        .not_to eql(project_other.info('id'))
     end
 
     it 'has a resource requirement' do
@@ -52,17 +52,17 @@ describe Project do
     end
 
     it 'has to start before it ends' do
-      expect(project.info('project_start'))
-        .to be < project.info('project_finish')
+      expect(project.info('start'))
+        .to be < project.info('finish')
     end
 
     it 'has to start in the future' do
-      expect(project.info('project_start'))
+      expect(project.info('start'))
         .to be > Date.today
     end
 
     it 'does not have a start date with incorrect parameters' do
-      expect(project_other.info('project_start')).to be_nil
+      expect(project_other.info('start')).to be_nil
     end
   end
 

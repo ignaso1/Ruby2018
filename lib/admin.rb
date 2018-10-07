@@ -3,7 +3,6 @@ require 'user.rb'
 # Admin class used as a base for other classes
 class Admin < User
   attr_reader :projects, :resources, :users
-
   def initialize
     super('admin')
     @projects = [], @resources = [], @users = []
@@ -25,7 +24,6 @@ class Admin < User
     return false unless user.instance_of?(User) && @users.include?(user)
 
     @users[user_index(user)].information[:password] = new_password
-
   end
 
   def change_user_role_type(user, new_role_type)
@@ -35,7 +33,7 @@ class Admin < User
   end
 
   def delete_resource(project, resource)
-    project.remove_resource(resource)
+    project.remove_resource(resource) if resources.include?(resource)
   end
 
   def remove_project(project)
@@ -43,14 +41,11 @@ class Admin < User
   end
 
   def comment_project(project, comment, user)
-    return unless comment.instance_of?(Comment)
-    if @users[user_index(user)]
-      .information[:role_type] === 'admin'
-      return 0;
-    else 
-    @projects[project_index(project)]
-      .comments << comment
-    end
+    return 0 unless comment.instance_of?(Comment) &&
+                    @users[user_index(user)]
+                    .information('role_type') == 'admin'
+
+    @projects[project_index(project)].comments << comment
   end
 
   def user_index(user)

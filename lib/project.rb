@@ -3,21 +3,21 @@
 class Project
   attr_reader :resources, :comments, :information
   def initialize(project_name, resource_reqs)
-    @information = { project_start: nil,
-                     project_finish: nil }
-    @information[:project_id] = self
-    @information[:project_name] = project_name
+    @information = { start: nil,
+                     finish: nil }
+    @information[:id] = self
+    @information[:name] = project_name
     @information[:resource_reqs] = resource_reqs > 0 ? resource_reqs : 1
     @resources = []
     @comments = []
   end
 
   def define_start(date)
-    @information[:project_start] = date if date > Date.today
+    @information[:start] = date if date > Date.today
   end
 
   def define_finish(length)
-    @information[:project_finish] = info('project_start') + length if length > 0
+    @information[:finish] = info('start') + length if length > 0
   end
 
   def add_resource(resource)
