@@ -74,8 +74,8 @@ describe User do
     end
 
     it 'must enter the right credentials to login' do
-      expect(user.login('user@gmail.com', 'pwd'))
-        .to change(user, :is_logged_in).from(false).to(true)
+      user.login('user@gmail.com', 'pwd')
+      expect(user.information('is_logged_in')).to be true
     end
 
     it 'cannot login with a wrong password' do
