@@ -34,20 +34,20 @@ describe ProjectManager do
 
     it 'can change projects name' do
       expect { manager.change_project_name(project, 'lorem') }
-        .to change { manager.projects[0].information[:project_name] }
+        .to change { manager.projects[0].information[:name] }
         .from('project').to('lorem')
     end
 
     it 'can change the start date of the project' do
       expect { manager.define_project_start(project, date) }
-        .to change { manager.projects[0].information[:project_start] }
+        .to change { manager.projects[0].information[:start] }
         .from(nil).to(date)
     end
 
     it 'can change the finish date of the project' do
       manager.define_project_start(project, date)
       expect { manager.define_project_finish(project, 10) }
-        .to change { manager.projects[0].information[:project_finish] }
+        .to change { manager.projects[0].information[:finish] }
         .from(nil).to(date + 10)
     end
   end

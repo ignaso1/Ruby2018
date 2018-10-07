@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 describe Admin do
   context 'when logged in' do
     let(:user) { User.new }
@@ -15,7 +14,8 @@ describe Admin do
       admin.users << user
       project.add_resource(resource)
       manager.projects << project
-      project.add_resource(resource)
+      admin.projects << project
+      admin.resources << resource
     end
 
     it 'can delete user' do
@@ -65,7 +65,8 @@ describe Admin do
 
     it 'can not comment' do
       admin.comment_project(project, comment, user)
-      expect(manager.projects[0].comments[0]).to eq(manager.projects[0].comments[0])
+      expect(manager.projects[0].comments[0])
+        .to eq(manager.projects[0].comments[0])
     end
   end
 end
