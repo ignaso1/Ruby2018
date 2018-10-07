@@ -30,6 +30,18 @@ class User
     false
   end
 
+  def change_password(password)
+    @information[:password] = password
+  end
+
+  def change_role_type(role_type)
+    @information[:role_type] = role_type
+  end
+
+  def get_role_type
+    @role_type
+  end
+
   def information(symbol)
     @information.fetch(symbol.to_sym)
   end

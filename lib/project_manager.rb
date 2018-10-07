@@ -77,4 +77,9 @@ class ProjectManager < User
   def project_index(project)
     return @projects.index(project) if @projects.include?(project)
   end
+
+  def delete_project(project)
+    return projects.delete(project) if projects.include?(project)
+  end
+
 end

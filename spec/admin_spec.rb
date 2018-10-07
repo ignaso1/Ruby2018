@@ -47,8 +47,8 @@ describe Admin do
 
     it 'can change user role type' do
       expect { admin.change_user_role_type(user, 'abc123') }
-        .to change { admin.users[0].information[:role_type] }
-        .from('admin').to('abc123')
+        .to change { admin.users[0].information('role_type') }
+        .from('base').to('abc123')
     end
 
     it 'can remove a resource' do
@@ -58,7 +58,7 @@ describe Admin do
     end
 
     it 'can remove project' do
-      expect { admin.remove_project(project) }
+      expect { admin.remove_project(project, manager) }
         .to change { manager.projects.include?(project) }
         .from(true).to(false)
     end
