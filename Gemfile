@@ -9,8 +9,9 @@ gem 'reek'
 gem 'rspec'
 gem 'rubocop'
 gem 'rubocop-rspec'
-gem 'simplecov'
+gem 'simplecov', require: false, group: :test
 
+gem "rspec-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
@@ -63,6 +64,7 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'

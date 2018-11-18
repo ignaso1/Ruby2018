@@ -47,3 +47,13 @@ class User < ApplicationRecord
     @information.fetch(symbol.to_sym)
     end
 end
+
+# class User < ApplicationRecord
+
+#     scope :active_users, -> { where(is_logged_in: true) }
+#     scope :inactive_users, -> { where(is_logged_in: false) }
+
+#     validates :user_id, presence: true
+#     validates :password, presence: true
+#     validates :email, presence: true
+# end
