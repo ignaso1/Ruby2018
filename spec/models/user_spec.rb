@@ -97,7 +97,8 @@ describe User do
     end
 
     it 'can have a different role type' do
-      expect(user_other.information('role_type')).to eql('admin')
+    #   expect(user_other.information('role_type')).to eql('admin')
+      expect(user.change_role_type('admin')).to eql('admin')
     end
 
     it 'enters their email upon registration' do
@@ -111,8 +112,9 @@ describe User do
     end
 
     it 'password should be longer than 4 symbols' do
-      user.register('user@gmail.com', 'passw', 'User 1')
-      expect(user).to have_password_longer_than_4_sym
+    #   user.register('user@gmail.com', 'passw', 'User 1')
+    #   expect(user).to have_password_longer_than_4_sym
+        expect(user.password_length('passw')).to be(true)
     end
   end
 
@@ -187,6 +189,9 @@ describe User do
     end
 
     it 'can have their role changed' do
+        # user = User.new(password: 'password', email: 'Email').save
+        #             expect(user).to eq(false)
+
       expect { user.change_role_type('admin') }
         .to change { user.information('role_type') }.from('base').to('admin')
     end

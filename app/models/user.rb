@@ -2,7 +2,7 @@ class User < ApplicationRecord
     def initialize(role_type = 'base')
         @information = { user_id: nil,
                             is_logged_in: false }
-        @information[:role_type] = role_type
+        @information[:role_type] = 'base'
     end
 
     def register(email, password, full_name = nil)
@@ -33,6 +33,11 @@ class User < ApplicationRecord
 
     def change_password(password)
     @information[:password] = password
+    end
+
+    def password_length(password)
+        # @information[:password] = password
+        password.length > 4
     end
 
     def change_name(full_name)
