@@ -2,7 +2,7 @@ require 'yaml'
 # Load/Restore state
 class State < ApplicationRecord
   attr_reader :information
-  def initialize
+  def initialize(users = [])
     @information = { users: [],
                      projects: [],
                      admin: nil,
