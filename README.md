@@ -1,24 +1,87 @@
-# README
+# User < ApplicationRecord
+    email
+    password
+    role_type
+    first_name
+    last_name
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Admin < User('admin')
+    has_many :users
+    has_one  :company
 
-Things you may want to cover:
+# ProjectManager < User('project_manager')
+    has_many :projects
 
-* Ruby version
+# HumanResourceManager < User('hr_manager)
+    has_many :potential_resources
+    has_many :resources
 
-* System dependencies
+# CEO < User('ceo')
+    belongs_to :company
+    
+    salary
 
-* Configuration
+# Company < ApplicationRecord
+    belongs_to :admin
 
-* Database creation
+    id
+    name
+    debt
+    
+    has_many :resources
+    has_one  :ceo
 
-* Database initialization
+# Project < ApplicationRecord
+    belongs_to :project_manager
 
-* How to run the test suite
+    name
+    resource_requirements
+    start
+    finish
 
-* Services (job queues, cache servers, search engines, etc.)
+    has_many :resources
+    has_many :comments, as :commentable
 
-* Deployment instructions
+# PotentialResource < ApplicationRecord
+    belongs_to :human_resource_manager
 
-* ...
+    email
+    name
+    last_name
+    position
+
+    has_many :comments, as :commentable
+
+# Resource < ApplicationRecord
+    belongs_to :project
+    belongs_to :admin
+    belongs_to :company
+
+    email
+    name
+    last_name
+    position
+    salary
+    birthday
+
+    has_many :comments, as :commentable
+    has_many :leave_notices
+
+# Comment < ApplicationRecord
+    belongs_to :commentable, polymorphic => true
+
+    author
+    content
+    creation_date
+
+# LeaveNotice < ApplicationRecord
+    belongs_to :resource
+
+    start
+    finish
+    reason
+
+
+
+
+

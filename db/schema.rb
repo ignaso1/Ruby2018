@@ -22,11 +22,6 @@ ActiveRecord::Schema.define(version: 2018_11_13_155007) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "comment_recipients", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -67,18 +62,12 @@ ActiveRecord::Schema.define(version: 2018_11_13_155007) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "states", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
-    t.string "user_id"
-    t.boolean "is_logged_in"
-    t.string "role_type"
-    t.string "full_name"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
+    t.string "role_type"
+    t.string "name"
+    t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
