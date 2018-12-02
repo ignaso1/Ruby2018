@@ -16,6 +16,5 @@ describe User, type: :model do
   end
 
   context 'validates email' do
-
   end
 end

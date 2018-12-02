@@ -15,7 +15,8 @@
 #     end
 
 #     it 'has a unique id' do
-#       expect(comment.information[:id]).not_to be(comment_other.information[:id])
+#       expect(comment.information[:id])
+#           .not_to be(comment_other.information[:id])
 #     end
 
 #     it 'gets current date upon creation' do

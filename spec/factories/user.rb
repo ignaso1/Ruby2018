@@ -1,10 +1,8 @@
 FactoryBot.define do
-
-  factory :user, class:User do
-
+  factory :user, class :User do
   end
 
-  factory :valid_user, class: User  do
+  factory :valid_user, class: User do
     email { 'johndoe@example.com' }
     password_digest { 'password' }
     role_type { '' }
