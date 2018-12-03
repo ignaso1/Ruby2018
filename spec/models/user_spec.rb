@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 describe User, type: :model do
-  
   it 'has a valid factory' do
     expect(build(:valid_user)).to be_valid
   end
@@ -20,7 +19,7 @@ describe User, type: :model do
   context 'when validating role' do
     let(:invalid_user) { build(:user, :invalid_role) }
 
-    it { is_expected.to_not allow_value(invalid_user.role).for(:role) }
+    it { is_expected.not_to allow_value(invalid_user.role).for(:role) }
     it { is_expected.to allow_value('admin').for(:role) }
   end
 
