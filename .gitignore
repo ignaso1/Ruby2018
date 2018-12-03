@@ -14,8 +14,7 @@ test/version_tmp
 tmp
 
 \.idea/
-log/test.log
-log/development.log
+*.log
 db/development.sqlite3
 db/test.sqlite3
 
