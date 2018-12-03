@@ -53,8 +53,14 @@ ActiveRecord::Schema.define(version: 2018_11_13_155007) do
   end
 
   create_table "projects", force: :cascade do |t|
+    t.integer "project_manager_id"
+    t.string "name"
+    t.integer "resource_reqs"
+    t.datetime "start"
+    t.datetime "finish"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["project_manager_id"], name: "index_projects_on_project_manager_id"
   end
 
   create_table "resources", force: :cascade do |t|

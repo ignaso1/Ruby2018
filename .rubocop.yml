@@ -9,3 +9,4 @@ AllCops:
   - 'db/schema.rb'
   - 'db/seeds.rb'
   - 'db/migrate/**.rb'
+  - 'config/**.rb'
