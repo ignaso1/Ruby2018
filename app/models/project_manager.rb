@@ -3,6 +3,6 @@
 # Represents a project manager
 class ProjectManager < User
   has_many :projects
- # has_many :resources, through: :projects
- # validate :projects, presence: true
+  # has_many :resources, through: :projects
+  # validate :projects, presence: true
 end

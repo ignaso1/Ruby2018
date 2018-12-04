@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'user'
 # Human resource manager class
 class HumanResourceManager < User

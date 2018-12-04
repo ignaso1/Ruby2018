@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # require 'rails_helper'
 
 # describe HumanResourceManager do
@@ -13,7 +15,8 @@
 #     end
 
 #     it 'can have a project' do
-#       expect(hr_manager).to have_attributes(projects: [project, project_other])
+#       expect(hr_manager).to
+# have_attributes(projects: [project, project_other])
 #     end
 
 #     it 'can have multiple projects' do
@@ -83,7 +86,8 @@
 
 #     it 'change resource last name' do
 #       expect do
-#         hr_manager.change_resource_last_name(resource.information[:id], 'Smth2')
+#         hr_manager.change_resource_last_name(resource.information[:id],
+# 'Smth2')
 #       end
 #         .to change { hr_manager.resources[0].information[:last_name] }
 #         .from('Smith').to('Smth2')
