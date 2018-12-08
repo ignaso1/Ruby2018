@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe User, type: :model do
   it 'has a valid factory' do
-    expect(build(:valid_user)).to be_valid
+    expect(build(:valid_user, :admin)).to be_valid
   end
 
   context 'when validating name/last_name' do

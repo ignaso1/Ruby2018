@@ -6,21 +6,20 @@ FactoryBot.define do
       name { 51.times('a') }
     end
 
-    trait :invalid_email_format do
-      email { 'admin$gmail.com' }
-    end
-
-    trait :invalid_role do
-      role { 'fake' }
-    end
+    trait(:invalid_email_format) { email { 'admin$gmail.com' } }
+    trait(:invalid_role) { role { 'fake' } }
   end
 
   factory :valid_user, class: User do
     email { 'johndoe@example.com' }
     password { 'valid_password' }
-    role { 'admin' }
     name { 'John' }
     last_name { 'Doe' }
+
+    trait(:project_manager) { role { 'project_manager' } }
+    trait(:admin) { role { 'admin' } }
+    trait(:hr_manager) { role { 'hr_manager' } }
+    trait(:ceo) { role { 'ceo' } }
   end
 
   factory :random_user, class: User do

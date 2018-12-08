@@ -3,6 +3,10 @@
 require 'rails_helper'
 
 describe Project, type: :model do
+  it 'has a valid factory' do
+    expect(create(:valid_project)).to be_valid
+  end
+
   it { is_expected.to belong_to(:project_manager) }
 
   context 'when validating' do
