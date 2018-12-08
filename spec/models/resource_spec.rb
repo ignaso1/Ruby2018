@@ -4,11 +4,12 @@ require 'rails_helper'
 
 describe Resource, type: :model do
   it 'has a valid factory' do
-    expect(build(:valid_resource)).to be_valid
+    expect(create(:valid_resource, :to_manager)).to be_valid
   end
 
-  it { is_expected.to belong_to(:project) }
-  it { is_expected.to belong_to(:company) }
+  it { is_expected.to belong_to(:manageable) }
+  it { is_expected.to have_many(:comments) }
+  it { is_expected.to have_many(:leave_notices) }
 
   context 'when validating name/last_name' do
     let(:resource) { create(:resource) }

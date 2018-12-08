@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :company, class: Company do
-    association :admin, factory: :admin
+    association :admin
     name { 'Company' }
     debt { 0 }
   end

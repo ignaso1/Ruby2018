@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
-# This is a resource class
+# Models a human resource
 class Resource < ApplicationRecord
-  belongs_to :project
-  belongs_to :company
+  belongs_to :manageable, polymorphic: true
+
+  has_many   :comments, as: :commentable
+  has_many   :leave_notices
 
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   VALID_ALPHA = /\A[^0-9`!@#\$%\^&*+_=]+\z/.freeze
+
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL }
   validates :name, presence: true, format: { with: VALID_ALPHA }

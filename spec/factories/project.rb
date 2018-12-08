@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :valid_project, class: Project do
-    association :project_manager, factory: :valid_pm
+  factory :project, class: Project do
+    association :project_manager
     name { 'project' }
     resource_reqs { 10 }
     start { Faker::Date.between(2.days.ago, Date.today) }

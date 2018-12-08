@@ -26,8 +26,11 @@ ActiveRecord::Schema.define(version: 2018_12_08_124913) do
   end
 
   create_table "comments", force: :cascade do |t|
+    t.string "commentable_type"
+    t.integer "commentable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -45,13 +48,17 @@ ActiveRecord::Schema.define(version: 2018_12_08_124913) do
   end
 
   create_table "leave_notices", force: :cascade do |t|
+    t.integer "resource_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["resource_id"], name: "index_leave_notices_on_resource_id"
   end
 
   create_table "potential_resources", force: :cascade do |t|
+    t.integer "human_resource_manager_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["human_resource_manager_id"], name: "index_potential_resources_on_human_resource_manager_id"
   end
 
   create_table "project_managers", force: :cascade do |t|
@@ -71,8 +78,8 @@ ActiveRecord::Schema.define(version: 2018_12_08_124913) do
   end
 
   create_table "resources", force: :cascade do |t|
-    t.integer "project_id"
-    t.integer "company_id"
+    t.string "manageable_type"
+    t.integer "manageable_id"
     t.string "email"
     t.string "name"
     t.string "last_name"
@@ -81,8 +88,7 @@ ActiveRecord::Schema.define(version: 2018_12_08_124913) do
     t.date "birthday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_resources_on_company_id"
-    t.index ["project_id"], name: "index_resources_on_project_id"
+    t.index ["manageable_type", "manageable_id"], name: "index_resources_on_manageable_type_and_manageable_id"
   end
 
   create_table "users", force: :cascade do |t|

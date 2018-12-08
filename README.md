@@ -1,81 +1,75 @@
 # User < ApplicationRecord
-    email
-    password
-    role_type
-    first_name
-    last_name
+    email X
+    password X
+    role_type X
+    first_name X
+    last_name X
 
 # Admin < User('admin')
-    has_many :users
-    has_one  :company
+    has_one  :company X
 
 # ProjectManager < User('project_manager')
-    has_many :projects
+    has_many :projects X
 
 # HumanResourceManager < User('hr_manager)
-    has_many :potential_resources
-    has_many :resources
+    has_many :potential_resources X
+    has_many :resources, as: :manageable X
 
 # CEO < User('ceo')
-    belongs_to :company
+    belongs_to :company X
     
-    salary
+    salary X
 
 # Company < ApplicationRecord
-    belongs_to :admin
+    belongs_to :admin X
+    has_many :resources, as: :manageable X
+    has_one  :ceo X
 
-    id
-    name
-    debt
+    name X
+    debt X
     
-    has_many :resources
-    has_one  :ceo
-
 # Project < ApplicationRecord
-    belongs_to :project_manager
+    belongs_to :project_manager X
+    has_many :resources, as: :manageable X
+    has_many :comments, as :commentable X
 
-    name
-    resource_requirements
-    start
-    finish
-
-    has_many :resources
-    has_many :comments, as :commentable
+    name X
+    resource_requirements X
+    start X
+    finish X
 
 # PotentialResource < ApplicationRecord
-    belongs_to :human_resource_manager
+    belongs_to :human_resource_manager  X
+    has_many :comments, as :commentable X
 
-    email
+    email 
     name
     last_name
     position
 
-    has_many :comments, as :commentable
+    
 
 # Resource < ApplicationRecord
-    belongs_to :project
-    belongs_to :admin
-    belongs_to :company
+    belongs_to :manageable, as: polymorphic: true X
+    has_many :comments, as :commentable X
+    has_many :leave_notices X
 
-    email
-    name
-    last_name
-    position
-    salary
-    birthday
-
-    has_many :comments, as :commentable
-    has_many :leave_notices
+    email X
+    name X
+    last_name X
+    position X
+    salary X
+    birthday X
 
 # Comment < ApplicationRecord
-    belongs_to :commentable, polymorphic => true
+    belongs_to :commentable, polymorphic => true X
 
     author
     content
     creation_date
 
 # LeaveNotice < ApplicationRecord
-    belongs_to :resource
+    belongs_to :resource X
 
     start
     finish
