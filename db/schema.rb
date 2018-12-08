@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_13_155007) do
+ActiveRecord::Schema.define(version: 2018_12_08_124913) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -18,8 +18,11 @@ ActiveRecord::Schema.define(version: 2018_11_13_155007) do
   end
 
   create_table "ceos", force: :cascade do |t|
+    t.integer "company_id"
+    t.float "salary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_ceos_on_company_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -28,8 +31,12 @@ ActiveRecord::Schema.define(version: 2018_11_13_155007) do
   end
 
   create_table "companies", force: :cascade do |t|
+    t.integer "admin_id"
+    t.float "debt"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_companies_on_admin_id"
   end
 
   create_table "human_resource_managers", force: :cascade do |t|
@@ -64,8 +71,18 @@ ActiveRecord::Schema.define(version: 2018_11_13_155007) do
   end
 
   create_table "resources", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "company_id"
+    t.string "email"
+    t.string "name"
+    t.string "last_name"
+    t.string "position"
+    t.float "salary"
+    t.date "birthday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_resources_on_company_id"
+    t.index ["project_id"], name: "index_resources_on_project_id"
   end
 
   create_table "users", force: :cascade do |t|

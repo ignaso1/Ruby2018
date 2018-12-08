@@ -1,14 +1,9 @@
 # frozen_string_literal: true
 
-# This is a model used for having a company ceo
-class Ceo < User
-  attr_reader :salary
-  def initialize(salary = 1)
-    super('Ceo')
-    @salary = salary if salary.positive?
-  end
+# Models a ceo for the company
+class Ceo < ApplicationRecord
+  belongs_to :company
 
-  def adjust_salary(salary)
-    @salary = salary if salary.positive?
-  end
+  validates :salary, presence: true,
+                     numericality: { greater_than_or_equal_to: 0 }
 end

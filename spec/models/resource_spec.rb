@@ -1,67 +1,42 @@
 # frozen_string_literal: true
-#
-# require 'rails_helper'
 
-# describe Resource do
-#   context 'when creating' do
-#     let(:resource) do
-#       described_class.new('lorem', 'ipsum')
-#     end
+require 'rails_helper'
 
-#     let(:resource_other) do
-#       described_class.new('lorem', 'ipsum')
-#     end
+describe Resource, type: :model do
+  it 'has a valid factory' do
+    expect(build(:valid_resource)).to be_valid
+  end
 
-#     it 'gets a resource id upon creation' do
-#       expect(resource.information[:id]).to eq(resource.itself)
-#     end
+  it { is_expected.to belong_to(:project) }
+  it { is_expected.to belong_to(:company) }
 
-#     it 'gets a name upon creation' do
-#       expect(resource.information[:name]).to eq('lorem')
-#     end
+  context 'when validating name/last_name' do
+    let(:resource) { create(:resource) }
 
-#     it 'can have a position assigned' do
-#       expect(resource.information.key?(:position)).to be true
-#     end
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:last_name) }
+    it { is_expected.not_to allow_value('!@').for(:name) }
+    it { is_expected.not_to allow_value(123).for(:name) }
+    it { is_expected.to allow_value('Name').for(:name) }
+    it { is_expected.not_to allow_value('!@').for(:last_name) }
+    it { is_expected.not_to allow_value(123).for(:last_name) }
+    it { is_expected.to allow_value('LastName').for(:last_name) }
+  end
 
-#     it 'can have a birthday assigned' do
-#       expect(resource.information.key?(:birthday)).to be true
-#     end
+  context 'when validating position' do
+    it { is_expected.to validate_presence_of(:position) }
+    it { is_expected.not_to allow_value(1).for(:position) }
+    it { is_expected.to allow_value('Developer').for(:position) }
+  end
 
-#     it 'can have a salary assigned' do
-#       expect(resource.information.key?(:salary)).to be true
-#     end
+  context 'when validating salary' do
+    it { is_expected.to validate_presence_of(:salary) }
+    it { is_expected.to allow_value(1000).for(:salary) }
+    it { is_expected.not_to allow_value(-1).for(:salary) }
+    it { is_expected.not_to allow_value('salary').for(:salary) }
+  end
 
-#     it 'gets a last name upon creation' do
-#       expect(resource.information[:last_name]).to eq('ipsum')
-#     end
-
-#     it 'has a unique id' do
-#       expect(resource.information[:id])
-#         .not_to eql(resource_other.information[:id])
-#     end
-#   end
-
-#   context 'when managing leave notices and comments' do
-#     let(:resource) { described_class.new('lorem', 'impsum') }
-#     let(:leave_notice) { LeaveNotice.new('sick') }
-#     let(:comment) { Comment.new('lorem', 'ipsum') }
-#     let(:comment_other) { Comment.new('lorem2', 'ipsum2') }
-
-#     it 'can have a leave notice' do
-#       resource.leave_notices << leave_notice
-#       expect(resource.leave_notices[0]).to be(leave_notice)
-#     end
-
-#     it 'can have a comment' do
-#       resource.comments << comment
-#       expect(resource.comments[0]).to eq(comment)
-#     end
-
-#     it 'can have multiple comments' do
-#       resource.comments << comment
-#       resource.comments << comment_other
-#       expect(resource.comments).to valid_comments(comment, comment_other)
-#     end
-#   end
-# end
+  context 'when validating birthday' do
+    it { is_expected.to validate_presence_of(:birthday) }
+  end
+end

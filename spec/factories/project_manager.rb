@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :valid_pm, class: ProjectManager,
                      parent: :valid_user,
-                     traits: [:project_manager] do
+                     traits: [:role_project_manager] do
   end
 end

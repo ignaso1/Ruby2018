@@ -16,17 +16,17 @@ FactoryBot.define do
     name { 'John' }
     last_name { 'Doe' }
 
-    trait(:project_manager) { role { 'project_manager' } }
-    trait(:admin) { role { 'admin' } }
-    trait(:hr_manager) { role { 'hr_manager' } }
-    trait(:ceo) { role { 'ceo' } }
+    trait(:role_project_manager) { role { 'project_manager' } }
+    trait(:role_admin) { role { 'admin' } }
+    trait(:role_hr_manager) { role { 'hr_manager' } }
+    trait(:role_ceo) { role { 'ceo' } }
   end
 
   factory :random_user, class: User do
-    name { Faker.first_name }
-    last_name { Faker.last_name }
-    email { Faker.Internet.email(name) }
-    password { Faker.Internet.password(8, 15, true) }
+    name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    email { Faker::Internet.email(name) }
+    password { Faker::Internet.password(8, 15, true) }
     role { %w[admin project_manager hr_manager ceo].sample }
   end
 end
