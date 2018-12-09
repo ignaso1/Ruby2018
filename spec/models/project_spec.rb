@@ -13,6 +13,9 @@ describe Project, type: :model do
 
   context 'when validating' do
     it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.not_to allow_value('!@').for(:name) }
+    it { is_expected.not_to allow_value(123).for(:name) }
+    it { is_expected.to allow_value('Project').for(:name) }
     it { is_expected.to validate_presence_of(:start) }
     it { is_expected.to validate_presence_of(:finish) }
     it { is_expected.to validate_inclusion_of(:resource_reqs).in_range(1..30) }

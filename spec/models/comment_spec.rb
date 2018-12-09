@@ -8,4 +8,17 @@ describe Comment, type: :model do
   end
 
   it { is_expected.to belong_to(:commentable) }
+
+  context 'when validating content' do
+    it { is_expected.to validate_length_of(:content).is_at_most(256) }
+    it { is_expected.to validate_presence_of(:content) }
+  end
+
+  context 'when validating creation' do
+    it { is_expected.to validate_presence_of(:creation) }
+  end
+
+  context 'when validating author' do
+    it { is_expected.to validate_presence_of(:author) }
+  end
 end

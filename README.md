@@ -42,12 +42,10 @@
     belongs_to :human_resource_manager  X
     has_many :comments, as :commentable X
 
-    email 
-    name
-    last_name
-    position
-
-    
+    email X
+    name X
+    last_name X
+    position X
 
 # Resource < ApplicationRecord
     belongs_to :manageable, as: polymorphic: true X
@@ -64,18 +62,13 @@
 # Comment < ApplicationRecord
     belongs_to :commentable, polymorphic => true X
 
-    author
-    content
-    creation_date
+    author X
+    content X
+    creation X
 
 # LeaveNotice < ApplicationRecord
     belongs_to :resource X
 
-    start
-    finish
-    reason
-
-
-
-
-
+    start X
+    finish X
+    reason X

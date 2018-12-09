@@ -2,6 +2,10 @@
 
 FactoryBot.define do
   factory :comment, class: Comment do
+    content  { 'This is a comment' }
+    author   { 'Author' }
+    creation { Date.new(1970, 1, 1).to_s }
+
     trait(:to_project) { association :commentable, factory: :project }
 
     trait :to_resource do

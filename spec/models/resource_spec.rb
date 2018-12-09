@@ -11,6 +11,13 @@ describe Resource, type: :model do
   it { is_expected.to have_many(:comments) }
   it { is_expected.to have_many(:leave_notices) }
 
+  context 'when validating email' do
+    it { is_expected.to validate_presence_of(:email) }
+    it { is_expected.not_to allow_value('!@').for(:email) }
+    it { is_expected.not_to allow_value(123).for(:email) }
+    it { is_expected.to allow_value('namelastname@gmail.com').for(:email) }
+  end
+
   context 'when validating name/last_name' do
     let(:resource) { create(:resource) }
 

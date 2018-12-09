@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 2018_12_08_124913) do
   create_table "comments", force: :cascade do |t|
     t.string "commentable_type"
     t.integer "commentable_id"
+    t.string "content"
+    t.string "author"
+    t.date "creation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
@@ -49,6 +52,9 @@ ActiveRecord::Schema.define(version: 2018_12_08_124913) do
 
   create_table "leave_notices", force: :cascade do |t|
     t.integer "resource_id"
+    t.string "reason"
+    t.date "start"
+    t.date "finish"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resource_id"], name: "index_leave_notices_on_resource_id"
@@ -56,6 +62,10 @@ ActiveRecord::Schema.define(version: 2018_12_08_124913) do
 
   create_table "potential_resources", force: :cascade do |t|
     t.integer "human_resource_manager_id"
+    t.string "email"
+    t.string "name"
+    t.string "last_name"
+    t.string "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["human_resource_manager_id"], name: "index_potential_resources_on_human_resource_manager_id"

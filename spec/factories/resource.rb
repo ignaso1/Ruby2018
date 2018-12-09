@@ -7,7 +7,7 @@ FactoryBot.define do
     last_name { Faker::Name.last_name }
     position { 'Developer' }
     salary { rand(0..100) }
-    birthday { '1970-01-01' }
+    birthday { Date.new(1970, 1, 1).to_s }
 
     trait(:to_company) { association :manageable, factory: :company }
     trait(:to_project) { association :manageable, factory: :project }
