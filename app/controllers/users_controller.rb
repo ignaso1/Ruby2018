@@ -3,7 +3,7 @@
 # controls users
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params.fetch(:id))
   end
 
   def new
@@ -23,8 +23,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :last_name, :email,
-                                 :role, :password,
-                                 :password_confirmation)
+    params.require(:user).permit(:email, :password,
+                                 :password_confirmation,
+                                 :name, :last_name, :role)
   end
 end
