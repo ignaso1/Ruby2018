@@ -81,8 +81,8 @@ group :test do
   gem 'chromedriver-helper'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'shoulda-matchers'
   gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

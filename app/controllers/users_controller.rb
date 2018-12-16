@@ -3,7 +3,7 @@
 # controls users
 class UsersController < ApplicationController
   def show
-    @user = User.find(params.fetch(:id))
+    @user = User.find(params.key?(:id))
   end
 
   def new

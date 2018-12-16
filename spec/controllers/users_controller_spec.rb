@@ -3,24 +3,23 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  describe 'GET #new' do
-    it 'creates a new user' do
-      get :new
-      expect(assigns(:user)).to be_a_new(User)
-    end
-  end
-
   describe 'POST #create' do
-    let(:subject) { post :create, params: { user: attributes_for(:valid_user, :role_admin) } }
-
     let(:user) { create(:valid_user, :role_admin) }
 
-    it 'creates a user with valid parameters' do
-      expect { subject }.to change(User, :count).by(1)
+    def valid_user
+      post :create, params: { user: attributes_for(:valid_user, :role_admin) }
     end
 
-    it 'redirects to user valid parameters' do
-      subject
+    it 'logs in with valid parameters' do
+      expect { valid_user }.to change { session[:user_id] }.to 1
+    end
+
+    it 'creates a user with valid parameters' do
+      expect { valid_user }.to change(User, :count).by(1)
+    end
+
+    it 'redirects to user page with valid parameters' do
+      valid_user
       expect(response).to redirect_to(action: :show, id: assigns(:user).id)
     end
 
@@ -32,6 +31,13 @@ RSpec.describe UsersController, type: :controller do
     it 'renders template new with invalid parameters' do
       post :create, params: { user: attributes_for(:invalid_user) }
       expect(response).to render_template(:new)
+    end
+  end
+
+  describe 'GET #new' do
+    it 'creates a new user' do
+      get :new
+      expect(assigns(:user)).to be_a_new(User)
     end
   end
 
