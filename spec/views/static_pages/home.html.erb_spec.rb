@@ -10,7 +10,7 @@ RSpec.describe 'static_pages/home.html.erb', type: :view do
 
     it 'links to profile if logged in' do
       render
-      expect(rendered).to match /Profile/
+      expect(rendered).to match(/Profile/)
     end
   end
 
@@ -21,7 +21,7 @@ RSpec.describe 'static_pages/home.html.erb', type: :view do
 
     it 'links to sign up' do
       render
-      expect(rendered).to match /Sign up/
+      expect(rendered).to match(/Sign up/)
     end
   end
-end 
+end

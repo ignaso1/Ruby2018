@@ -10,3 +10,4 @@ AllCops:
   - 'db/seeds.rb'
   - 'db/migrate/**.rb'
   - 'config/**.rb'
+  - 'spec/factories/**.rb'
