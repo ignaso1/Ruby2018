@@ -1,5 +1,8 @@
-<div class="center jumbotron">
+<div class='center jumbotron'>
   <h2>Human Resource Management System</h2>
-
-  <%= link_to 'Sign up', signup_path, class: "btn btn-lg btn-primary" %>
+  <% if logged_in? %>
+    <%= link_to 'Profile', current_user, class: 'btn btn-lg btn-primary'%>
+  <% else %>
+    <%= link_to 'Sign up', signup_path, class: 'btn btn-lg btn-primary' %>
+  <% end %>
 </div>
