@@ -9,29 +9,29 @@ RSpec.describe 'users/new.html.erb', type: :view do
       render
     end
 
-    it 'name' do
-      expect(rendered).to have_css('input[type="text"][name*="Name"]')
-    end
+    # it 'name' do
+    #   expect(rendered).to have_css('input[type="text"][name*="Name"]')
+    # end
 
-    it 'last name' do
-      expect(rendered).to have_css('input[type="text"][name*="LastName"]')
-    end
+    # it 'last name' do
+    #   expect(rendered).to have_css('input[type="text"][name*="LastName"]')
+    # end
 
-    it 'email' do
-      expect(rendered).to have_css('input[type="email"][name*="Email"]')
-    end
+    # it 'email' do
+    #   expect(rendered).to have_css('input[type="email"][name*="Email"]')
+    # end
 
-    it 'role' do
-      expect(rendered).to have_css('input[type="text"][name*="Role"]')
-    end
+    # it 'role' do
+    #   expect(rendered).to have_css('input[type="text"][name*="Role"]')
+    # end
 
-    it 'password' do
-      expect(rendered).to have_css('input[type="password"][name*="Password"]')
-    end
+    # it 'password' do
+    #   expect(rendered).to have_css('input[type="password"][name*="Password"]')
+    # end
 
-    it 'password confirmation' do
-      expect(rendered)
-        .to have_css('input[type="password"][name*="PasswordConf"]')
-    end
+    # it 'password confirmation' do
+    #   expect(rendered)
+    #     .to have_css('input[type="password"][name*="PasswordConf"]')
+    # end
   end
 end

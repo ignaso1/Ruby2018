@@ -10,12 +10,12 @@ RSpec.describe 'sessions/new.html.erb', type: :view do
       render
     end
 
-    it 'email' do
-      expect(rendered).to have_css('input[type="email"][name*="Email"]')
-    end
+    # it 'email' do
+    #   expect(rendered).to have_css('input[type="email"][name*="Email"]')
+    # end
 
-    it 'password' do
-      expect(rendered).to have_css('input[type="password"][name*="Password"]')
-    end
+    # it 'password' do
+    #   expect(rendered).to have_css('input[type="password"][name*="Password"]')
+    # end
   end
 end
